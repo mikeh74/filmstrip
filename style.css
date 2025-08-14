@@ -14,7 +14,6 @@
 }
 
 .filmstrip-item {
-    position: relative;
     flex: 0 0 calc((100% - 6 * 6px) / 7);
     min-width: 70px;
     aspect-ratio: 16 / 9;
@@ -28,6 +27,7 @@
 }
 
 .filmstrip-item-btn {
+    position: relative;
     display: flex;
     background-color: #575656;
     width: 100%;
