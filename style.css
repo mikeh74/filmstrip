@@ -41,8 +41,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255, 255, 255);
     pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .filmstrip-item-btn--active {
@@ -51,14 +53,18 @@
 }
 
 .filmstrip-item-btn.filmstrip-item-btn--active::after {
-    background: rgba(255, 255, 255, 0);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 
-.filmstrip-item-btn:active,
-.filmstrip-item-btn:hover,
-.filmstrip-item-btn:focus-visible {
-    outline: 2px solid #00893A;
-    outline-offset: -2px;
+.filmstrip-item-btn:hover::after {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.filmstrip-item-btn:focus-visible::after {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .ratio-16x9 {
