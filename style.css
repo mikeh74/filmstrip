@@ -1,0 +1,64 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.filmstrip {
+    display: flex;
+    margin-left: -2px;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    align-items: center;
+    justify-content: start;
+}
+
+.filmstrip-item {
+    flex: 0 0 calc(14% - 1px);
+    max-width: 14%;
+    min-width: 80px;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    scroll-snap-align: start;
+    scroll-snap-type: mandatory;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filmstrip-item-btn {
+    display: flex;
+    /* background-color: darkgray; */
+    width: 100%;
+    height: 100%;
+    margin: 2px;
+    border: 2px solid transparent;
+}
+
+.filmstrip-item-btn--active {
+    border: 2px solid green;
+}
+
+.filmstrip-item-btn:active,
+.filmstrip-item-btn:hover,
+.filmstrip-item-btn:focus-visible {
+    border: 2px solid darkgreen;
+}
+
+.ratio-16x9 {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+
+    .filmstrip {
+        gap: 9px;
+    }
+
+    .filmstrip-item {
+        flex: 0 0 calc(14% - 4px);
+    }
+}
